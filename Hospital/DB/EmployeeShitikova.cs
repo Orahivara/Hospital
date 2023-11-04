@@ -17,7 +17,7 @@ namespace Hospital.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public EmployeeShitikova()
         {
-            this.AppointmentYulia = new HashSet<AppointmentYulia>();
+            this.AppointmentYulias = new HashSet<AppointmentYulia>();
         }
     
         public int ID { get; set; }
@@ -34,7 +34,7 @@ namespace Hospital.DB
         public int IDGender { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AppointmentYulia> AppointmentYulia { get; set; }
+        public virtual ICollection<AppointmentYulia> AppointmentYulias { get; set; }
         public virtual DepartmentShitikova DepartmentShitikova { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual PostShitikova PostShitikova { get; set; }

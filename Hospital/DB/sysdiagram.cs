@@ -12,13 +12,12 @@ namespace Hospital.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class PatientDiagnosis
+    public partial class sysdiagram
     {
-        public int ID { get; set; }
-        public Nullable<int> IDPatient { get; set; }
-        public int IDDiagnosis { get; set; }
-    
-        public virtual DiagnosisShitikova DiagnosisShitikova { get; set; }
-        public virtual PatientShitikova PatientShitikova { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

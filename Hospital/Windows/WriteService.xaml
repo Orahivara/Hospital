@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:Hospital.Windows"
         mc:Ignorable="d"
         Title="WriteService" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFADE0E6">
 
         <Button x:Name="Назад" Content="back" HorizontalAlignment="Left" Margin="85,332,0,0" VerticalAlignment="Top" Height="63" Width="207" Click="Назад_Click"/>
         <Button x:Name="write" Content="Записвться на услугу" HorizontalAlignment="Left" Margin="509,332,0,0" VerticalAlignment="Top" Height="63" Width="225" Click="write_Click"/>
         <DatePicker Name="date" HorizontalAlignment="Left" Margin="690,64,0,0" VerticalAlignment="Top"/>
         <ComboBox Name="grid" HorizontalAlignment="Center" Margin="0,132,0,0" VerticalAlignment="Top" Width="456" Height="85"/>
+        <Image MouseLeftButtonDown="bPicture_MouseDown" HorizontalAlignment="Left" Height="52" Margin="10,10,0,0" VerticalAlignment="Top" Width="76" Source="/Windows/png-transparent-hospital-medicine-physician-patient-health-health-logo-medicine-patient.png"/>
 
     </Grid>
 </Window>

@@ -17,9 +17,9 @@ namespace Hospital.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PatientShitikova()
         {
-            this.OrderShitikova = new HashSet<OrderShitikova>();
-            this.PatientDiagnosis = new HashSet<PatientDiagnosis>();
-            this.TagOfClient = new HashSet<TagOfClient>();
+            this.OrderShitikovas = new HashSet<OrderShitikova>();
+            this.PatientDiagnosis = new HashSet<PatientDiagnosi>();
+            this.TagOfClients = new HashSet<TagOfClient>();
         }
     
         public int ID { get; set; }
@@ -36,10 +36,10 @@ namespace Hospital.DB
         public Nullable<int> IDTag { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderShitikova> OrderShitikova { get; set; }
+        public virtual ICollection<OrderShitikova> OrderShitikovas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PatientDiagnosis> PatientDiagnosis { get; set; }
+        public virtual ICollection<PatientDiagnosi> PatientDiagnosis { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TagOfClient> TagOfClient { get; set; }
+        public virtual ICollection<TagOfClient> TagOfClients { get; set; }
     }
 }

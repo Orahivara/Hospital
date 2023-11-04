@@ -23,16 +23,41 @@ namespace Hospital.Windows
     /// </summary>
     public partial class ChangeInfo : Window
     {
+       
         public ChangeInfo()
         {
             InitializeComponent();
-            date.ItemsSource = Help.Context.MyINfo(75);
+            date.ItemsSource = Help.Context.INFO(75);
+           
+        }
+        private void bPicture_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            this.Close();
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void change_Click(object sender, RoutedEventArgs e)
         {
-//
-            
+        forhelp.ItemsSource =  Help.Context.PatientShitikovas.Where(u => u.ID == 75).ToList();
+            PatientShitikova patient = new PatientShitikova();
+            patient.DateOfBirth = Convert.ToDateTime(date.SelectedCells[1]);
+            patient.IDGender = (forhelp.Items[6] as DB.Gender).ID;
+            patient.FName = forhelp.Items[1].ToString();
+            patient.LName = forhelp.Items[2].ToString();
+            patient.MName = forhelp.Items[3].ToString();
+            patient.Phone = date.SelectedCells[2].ToString();
+            patient.Address = date.SelectedCells[4].ToString();
+            patient.Email = date.SelectedCells[5].ToString();
+
+            Help.Context.PatientShitikovas.AddOrUpdate(patient);
+            Help.Context.SaveChanges();
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            MainPatientPage mainPatientPage = new MainPatientPage();
+            mainPatientPage.Show();
+            this.Close();
         }
     }
 }

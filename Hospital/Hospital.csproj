@@ -66,76 +66,112 @@
     </ApplicationDefinition>
     <Compile Include="ClassHelper\Help.cs" />
     <Compile Include="DB\AllService_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\AppointmentYulia.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\BestEmployee.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CountGood.cs">
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\CountSer_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.edmx</DependentUpon>
     </Compile>
     <Compile Include="DB\DepartmentShitikova.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\DiagnosisShitikova.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\EmployeeShitikova.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Gender.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\information_Result.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\INFO_Result.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\MarthService.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\MedicalService.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\MedicalService2.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\MedicalService3.cs">
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\MedicalServiceShitikova.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\MyHistory_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\MyINfo2_Result.cs">
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\MyINfo_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\OctoberService.cs">
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\OrderShitikova.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\PatientDiagnosis.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="DB\PatientDiagnosi.cs">
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\PatientShitikova.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Patient_Info.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Patient_Info2.cs">
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\PostShitikova.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="DB\sysdiagram.cs">
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\TagOfClient.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\WILLWrite_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Windows\ChangeInfo.xaml.cs">
       <DependentUpon>ChangeInfo.xaml</DependentUpon>
@@ -217,12 +253,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DB\Model1.edmx">
+    <EntityDeploy Include="DB\db.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>db.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DB\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="DB\db.edmx.diagram">
+      <DependentUpon>db.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -243,15 +279,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB\Model1.Context.tt">
+    <Content Include="DB\db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>db.edmx</DependentUpon>
+      <LastGenOutput>db.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DB\Model1.tt">
+    <Content Include="DB\db.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>db.edmx</DependentUpon>
+      <LastGenOutput>db.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

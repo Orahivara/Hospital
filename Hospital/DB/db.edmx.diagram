@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="447a9f47d09d4847861b46742cc77acf" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.AppointmentYulia" Width="1.5" PointX="5.25" PointY="3.25" />
+        <EntityTypeShape EntityType="Model.DepartmentShitikova" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.DiagnosisShitikova" Width="1.5" PointX="5.25" PointY="12.625" />
+        <EntityTypeShape EntityType="Model.EmployeeShitikova" Width="1.5" PointX="3" PointY="2.375" />
+        <EntityTypeShape EntityType="Model.Gender" Width="1.5" PointX="0.75" PointY="6.375" />
+        <EntityTypeShape EntityType="Model.MedicalServiceShitikova" Width="1.5" PointX="3" PointY="8.25" />
+        <EntityTypeShape EntityType="Model.OrderShitikova" Width="1.5" PointX="7.5" PointY="3.25" />
+        <EntityTypeShape EntityType="Model.PatientDiagnosi" Width="1.5" PointX="7.5" PointY="8.375" />
+        <EntityTypeShape EntityType="Model.PatientShitikova" Width="1.5" PointX="5.25" PointY="7.375" />
+        <EntityTypeShape EntityType="Model.PostShitikova" Width="1.5" PointX="0.75" PointY="3.625" />
+        <EntityTypeShape EntityType="Model.sysdiagram" Width="1.5" PointX="9.75" PointY="2" />
+        <EntityTypeShape EntityType="Model.TagOfClient" Width="1.5" PointX="7.5" PointY="11.25" />
+        <EntityTypeShape EntityType="Model.BestEmployee" Width="1.5" PointX="9.75" PointY="5" />
+        <EntityTypeShape EntityType="Model.CountGood" Width="1.5" PointX="9.75" PointY="8" />
+        <EntityTypeShape EntityType="Model.MarthService" Width="1.5" PointX="9.75" PointY="11" />
+        <EntityTypeShape EntityType="Model.MedicalService" Width="1.5" PointX="0.75" PointY="12" />
+        <EntityTypeShape EntityType="Model.MedicalService2" Width="1.5" PointX="11.75" PointY="2" />
+        <EntityTypeShape EntityType="Model.MedicalService3" Width="1.5" PointX="11.75" PointY="5" />
+        <EntityTypeShape EntityType="Model.OctoberService" Width="1.5" PointX="11.75" PointY="8" />
+        <EntityTypeShape EntityType="Model.Patient_Info" Width="1.5" PointX="11.75" PointY="11" />
+        <EntityTypeShape EntityType="Model.Patient_Info2" Width="1.5" PointX="7.75" PointY="14" />
+        <AssociationConnector Association="Model.FK_AppointmentYulia_EmployeeShitikova" />
+        <AssociationConnector Association="Model.FK_AppointmentYulia_MedicalServiceShitikova" />
+        <AssociationConnector Association="Model.FK_OrderShitikova_AppointmentYulia" />
+        <AssociationConnector Association="Model.FK_EmployeeShitikova_DepartmentShitikova" />
+        <AssociationConnector Association="Model.FK_PatientDiagnosis_DiagnosisShitikova" />
+        <AssociationConnector Association="Model.FK_EmployeeShitikova_Gender" />
+        <AssociationConnector Association="Model.FK_EmployeeShitikova_PostShitikova" />
+        <AssociationConnector Association="Model.FK_OrderShitikova_PatientShitikova" />
+        <AssociationConnector Association="Model.FK_PatientDiagnosis_PatientShitikova" />
+        <AssociationConnector Association="Model.FK_TagOfClient_PatientShitikova" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:Hospital.Windows"
         mc:Ignorable="d"
         Title="MyInfo" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFADE0E6">
      
-        <Button x:Name="back" Content="Button" HorizontalAlignment="Left" Margin="56,346,0,0" VerticalAlignment="Top" Height="64" Width="230" Click="back_Click"/>
+        <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Margin="56,346,0,0" VerticalAlignment="Top" Height="64" Width="230" Click="back_Click"/>
         <Button x:Name="change" Content="Изменить" HorizontalAlignment="Left" Margin="466,349,0,0" VerticalAlignment="Top" Height="57" Width="241" Click="change_Click"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="113,86,178,170" x:Name="data"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="34,86,10,153" x:Name="data" SelectionChanged="data_SelectionChanged"/>
+        <Image MouseLeftButtonDown="bPicture_MouseDown" HorizontalAlignment="Left" Height="52" Margin="10,10,0,0" VerticalAlignment="Top" Width="76" Source="/Windows/png-transparent-hospital-medicine-physician-patient-health-health-logo-medicine-patient.png"/>
     </Grid>
 </Window>

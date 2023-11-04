@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:Hospital.Windows"
         mc:Ignorable="d"
         Title="MyIstory" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="grid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,99,0,183"/>
+    <Grid Background="#FFADE0E6">
+        <DataGrid x:Name="grid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,99,0,183" SelectionChanged="grid_SelectionChanged"/>
         <Button x:Name="Назад" Content="back" HorizontalAlignment="Center" Margin="0,327,0,0" VerticalAlignment="Top" Height="71" Width="320" Click="Назад_Click"/>
+        <Image MouseLeftButtonDown="bPicture_MouseDown" HorizontalAlignment="Left" Height="52" Margin="10,10,0,0" VerticalAlignment="Top" Width="76" Source="/Windows/png-transparent-hospital-medicine-physician-patient-health-health-logo-medicine-patient.png"/>
 
     </Grid>
 </Window>

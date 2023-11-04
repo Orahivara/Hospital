@@ -25,11 +25,16 @@ namespace Hospital.Windows
         {
             InitializeComponent();
 
-            grid.ItemsSource = Help.Context.MedicalServiceShitikova.ToList();
+            grid.ItemsSource = Help.Context.MedicalServiceShitikovas.ToList();
               grid.SelectedIndex = 1;
                 grid.DisplayMemberPath = "TitleService";
             
          
+        }
+        private void bPicture_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            this.Close();
         }
 
         private void Назад_Click(object sender, RoutedEventArgs e)
@@ -47,7 +52,7 @@ namespace Hospital.Windows
             appointmentYulia.IDEmloyee = 1;
             string datet = date.SelectedDate.ToString();
             appointmentYulia.DateService = Convert.ToDateTime(datet);
-            Help.Context.AppointmentYulia.Add(appointmentYulia);
+            Help.Context.AppointmentYulias.Add(appointmentYulia);
 
             Help.Context.SaveChanges();
             MessageBox.Show("Вы записаны");

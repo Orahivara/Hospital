@@ -12,18 +12,10 @@ namespace Hospital.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class PostShitikova
+    public partial class CountGood
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PostShitikova()
-        {
-            this.EmployeeShitikovas = new HashSet<EmployeeShitikova>();
-        }
-    
-        public int ID { get; set; }
-        public string PostName { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EmployeeShitikova> EmployeeShitikovas { get; set; }
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
+        public Nullable<int> CntProducts { get; set; }
     }
 }

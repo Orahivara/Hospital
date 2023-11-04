@@ -36,7 +36,7 @@ namespace Hospital.Windows
 
             this.Close();
         }
-
+     
         private void back_Click(object sender, RoutedEventArgs e)
         {
             MainPatientPage mainPatient = new MainPatientPage();

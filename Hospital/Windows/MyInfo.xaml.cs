@@ -24,7 +24,12 @@ namespace Hospital.Windows
         public MyInfo()
         {
             InitializeComponent();
-            data.ItemsSource = Help.Context.MyINfo(1);
+            data.ItemsSource = Help.Context.INFO(1);
+        }
+        private void bPicture_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            this.Close();
         }
 
         private void back_Click(object sender, RoutedEventArgs e)
@@ -39,6 +44,11 @@ namespace Hospital.Windows
             ChangeInfo changeInfo = new ChangeInfo();
             changeInfo.Show();
             this.Close();
+        }
+
+        private void data_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

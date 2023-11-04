@@ -15,10 +15,10 @@ namespace Hospital.DB
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Entities2 : DbContext
+    public partial class Entities3 : DbContext
     {
-        public Entities2()
-            : base("name=Entities2")
+        public Entities3()
+            : base("name=Entities3")
         {
         }
     
@@ -27,18 +27,27 @@ namespace Hospital.DB
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AppointmentYulia> AppointmentYulia { get; set; }
-        public virtual DbSet<DepartmentShitikova> DepartmentShitikova { get; set; }
-        public virtual DbSet<DiagnosisShitikova> DiagnosisShitikova { get; set; }
-        public virtual DbSet<EmployeeShitikova> EmployeeShitikova { get; set; }
-        public virtual DbSet<Gender> Gender { get; set; }
-        public virtual DbSet<MedicalServiceShitikova> MedicalServiceShitikova { get; set; }
-        public virtual DbSet<OrderShitikova> OrderShitikova { get; set; }
-        public virtual DbSet<PatientDiagnosis> PatientDiagnosis { get; set; }
-        public virtual DbSet<PatientShitikova> PatientShitikova { get; set; }
-        public virtual DbSet<PostShitikova> PostShitikova { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<TagOfClient> TagOfClient { get; set; }
+        public virtual DbSet<AppointmentYulia> AppointmentYulias { get; set; }
+        public virtual DbSet<DepartmentShitikova> DepartmentShitikovas { get; set; }
+        public virtual DbSet<DiagnosisShitikova> DiagnosisShitikovas { get; set; }
+        public virtual DbSet<EmployeeShitikova> EmployeeShitikovas { get; set; }
+        public virtual DbSet<Gender> Genders { get; set; }
+        public virtual DbSet<MedicalServiceShitikova> MedicalServiceShitikovas { get; set; }
+        public virtual DbSet<OrderShitikova> OrderShitikovas { get; set; }
+        public virtual DbSet<PatientDiagnosi> PatientDiagnosis { get; set; }
+        public virtual DbSet<PatientShitikova> PatientShitikovas { get; set; }
+        public virtual DbSet<PostShitikova> PostShitikovas { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TagOfClient> TagOfClients { get; set; }
+        public virtual DbSet<BestEmployee> BestEmployees { get; set; }
+        public virtual DbSet<CountGood> CountGoods { get; set; }
+        public virtual DbSet<MarthService> MarthServices { get; set; }
+        public virtual DbSet<MedicalService> MedicalServices { get; set; }
+        public virtual DbSet<MedicalService2> MedicalService2 { get; set; }
+        public virtual DbSet<MedicalService3> MedicalService3 { get; set; }
+        public virtual DbSet<OctoberService> OctoberServices { get; set; }
+        public virtual DbSet<Patient_Info> Patient_Info { get; set; }
+        public virtual DbSet<Patient_Info2> Patient_Info2 { get; set; }
     
         public virtual ObjectResult<AllService_Result> AllService()
         {
@@ -221,6 +230,33 @@ namespace Hospital.DB
                 new ObjectParameter("ipatient", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WILLWrite_Result>("WILLWrite", ipatientParameter);
+        }
+    
+        public virtual ObjectResult<MyINfo2_Result> MyINfo2(Nullable<int> idpatient)
+        {
+            var idpatientParameter = idpatient.HasValue ?
+                new ObjectParameter("idpatient", idpatient) :
+                new ObjectParameter("idpatient", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MyINfo2_Result>("MyINfo2", idpatientParameter);
+        }
+    
+        public virtual ObjectResult<information_Result> information(Nullable<int> idpatient)
+        {
+            var idpatientParameter = idpatient.HasValue ?
+                new ObjectParameter("idpatient", idpatient) :
+                new ObjectParameter("idpatient", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<information_Result>("information", idpatientParameter);
+        }
+    
+        public virtual ObjectResult<INFO_Result> INFO(Nullable<int> ipatient)
+        {
+            var ipatientParameter = ipatient.HasValue ?
+                new ObjectParameter("ipatient", ipatient) :
+                new ObjectParameter("ipatient", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<INFO_Result>("INFO", ipatientParameter);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Hospital
 
         private void In_Click(object sender, RoutedEventArgs e)
         {
-            var correct = Help.Context.PatientShitikova.FirstOrDefault(u => u.Login == login.Text && u.Password == password.Password);
+            var correct = Help.Context.PatientShitikovas.FirstOrDefault(u => u.Login == login.Text && u.Password == password.Password);
             if (correct != null)
             {
                

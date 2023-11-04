@@ -56,7 +56,7 @@ namespace Hospital.Windows
                 {
                     patient.IDGender = 2;
                 }
-                Help.Context.PatientShitikova.Add(patient);
+                Help.Context.PatientShitikovas.Add(patient);
                 Help.Context.SaveChanges();
                
                 MainWindow main=new MainWindow();

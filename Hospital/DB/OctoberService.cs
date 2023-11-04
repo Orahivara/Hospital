@@ -12,12 +12,10 @@ namespace Hospital.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class OctoberService
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string TitleService { get; set; }
+        public string Name { get; set; }
+        public System.DateTime DateOfBirth { get; set; }
     }
 }

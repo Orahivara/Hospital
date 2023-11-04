@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Hospital.DB;
 
 namespace Hospital.Windows
 {
@@ -22,6 +24,11 @@ namespace Hospital.Windows
         public MainPatientPage()
         {
             InitializeComponent();
+        }
+        private void bPicture_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            this.Close();
         }
 
         private void history_Click(object sender, RoutedEventArgs e)
@@ -53,10 +60,6 @@ namespace Hospital.Windows
             willWrite.Show();
             this.Close();
         }
-        private void bPicture_MouseDown(object sender, MouseEventArgs e)
-        {
-           
-            this.Close();
-        }
+   
     }
 }

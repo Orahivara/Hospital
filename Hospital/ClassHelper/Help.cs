@@ -10,6 +10,6 @@ namespace Hospital.ClassHelper
 {
     public class Help
     {
-        public static Entities2 Context { get; set; } = new Entities2();
+        public static Entities3 Context { get; set; } = new Entities3();
     }
 }

@@ -17,13 +17,13 @@ namespace Hospital.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DiagnosisShitikova()
         {
-            this.PatientDiagnosis = new HashSet<PatientDiagnosis>();
+            this.PatientDiagnosis = new HashSet<PatientDiagnosi>();
         }
     
         public int ID { get; set; }
         public string DiagnosiName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PatientDiagnosis> PatientDiagnosis { get; set; }
+        public virtual ICollection<PatientDiagnosi> PatientDiagnosis { get; set; }
     }
 }
