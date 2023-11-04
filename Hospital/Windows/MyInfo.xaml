@@ -1,0 +1,15 @@
+﻿<Window x:Class="Hospital.Windows.MyInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.Windows"
+        mc:Ignorable="d"
+        Title="MyInfo" Height="450" Width="800">
+    <Grid>
+     
+        <Button x:Name="back" Content="Button" HorizontalAlignment="Left" Margin="56,346,0,0" VerticalAlignment="Top" Height="64" Width="230" Click="back_Click"/>
+        <Button x:Name="change" Content="Изменить" HorizontalAlignment="Left" Margin="466,349,0,0" VerticalAlignment="Top" Height="57" Width="241" Click="change_Click"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="113,86,178,170" x:Name="data"/>
+    </Grid>
+</Window>

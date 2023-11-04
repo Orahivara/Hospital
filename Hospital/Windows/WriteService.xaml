@@ -1,0 +1,17 @@
+﻿<Window x:Class="Hospital.Windows.WriteService"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.Windows"
+        mc:Ignorable="d"
+        Title="WriteService" Height="450" Width="800">
+    <Grid>
+
+        <Button x:Name="Назад" Content="back" HorizontalAlignment="Left" Margin="85,332,0,0" VerticalAlignment="Top" Height="63" Width="207" Click="Назад_Click"/>
+        <Button x:Name="write" Content="Записвться на услугу" HorizontalAlignment="Left" Margin="509,332,0,0" VerticalAlignment="Top" Height="63" Width="225" Click="write_Click"/>
+        <DatePicker Name="date" HorizontalAlignment="Left" Margin="690,64,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="grid" HorizontalAlignment="Center" Margin="0,132,0,0" VerticalAlignment="Top" Width="456" Height="85"/>
+
+    </Grid>
+</Window>

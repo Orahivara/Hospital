@@ -1,0 +1,1009 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Model1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AppointmentYulia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDEmloyee" Type="int" Nullable="false" />
+          <Property Name="IDMedicalService" Type="int" Nullable="false" />
+          <Property Name="DateService" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepartmentShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DiagnosisShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DiagnosiName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PassportSeries" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="PassportNumber" Type="nchar" MaxLength="6" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateOfBirthday" Type="date" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="IDDepartment" Type="int" Nullable="false" />
+          <Property Name="IDPost" Type="int" Nullable="false" />
+          <Property Name="IDGender" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GenderName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedicalServiceShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleService" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Duration" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="QNT" Type="int" />
+        </EntityType>
+        <EntityType Name="OrderShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDAppointment" Type="int" Nullable="false" />
+          <Property Name="IDPatient" Type="int" />
+          <Property Name="TotalPrice" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientDiagnosis">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPatient" Type="int" />
+          <Property Name="IDDiagnosis" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="IDGender" Type="int" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Login" Type="nchar" MaxLength="20" />
+          <Property Name="Password" Type="nchar" MaxLength="20" />
+          <Property Name="IDTag" Type="int" />
+        </EntityType>
+        <EntityType Name="PostShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PostName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TagOfClient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameTag" Type="nchar" MaxLength="50" />
+          <Property Name="IDClient" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AppointmentYulia_EmployeeShitikova">
+          <End Role="EmployeeShitikova" Type="Self.EmployeeShitikova" Multiplicity="1" />
+          <End Role="AppointmentYulia" Type="Self.AppointmentYulia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppointmentYulia">
+              <PropertyRef Name="IDEmloyee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AppointmentYulia_MedicalServiceShitikova">
+          <End Role="MedicalServiceShitikova" Type="Self.MedicalServiceShitikova" Multiplicity="1" />
+          <End Role="AppointmentYulia" Type="Self.AppointmentYulia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalServiceShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppointmentYulia">
+              <PropertyRef Name="IDMedicalService" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeShitikova_DepartmentShitikova">
+          <End Role="DepartmentShitikova" Type="Self.DepartmentShitikova" Multiplicity="1" />
+          <End Role="EmployeeShitikova" Type="Self.EmployeeShitikova" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmployeeShitikova">
+              <PropertyRef Name="IDDepartment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeShitikova_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="EmployeeShitikova" Type="Self.EmployeeShitikova" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmployeeShitikova">
+              <PropertyRef Name="IDGender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeShitikova_PostShitikova">
+          <End Role="PostShitikova" Type="Self.PostShitikova" Multiplicity="1" />
+          <End Role="EmployeeShitikova" Type="Self.EmployeeShitikova" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmployeeShitikova">
+              <PropertyRef Name="IDPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderShitikova_AppointmentYulia">
+          <End Role="AppointmentYulia" Type="Self.AppointmentYulia" Multiplicity="1" />
+          <End Role="OrderShitikova" Type="Self.OrderShitikova" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppointmentYulia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderShitikova">
+              <PropertyRef Name="IDAppointment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderShitikova_PatientShitikova">
+          <End Role="PatientShitikova" Type="Self.PatientShitikova" Multiplicity="0..1" />
+          <End Role="OrderShitikova" Type="Self.OrderShitikova" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderShitikova">
+              <PropertyRef Name="IDPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientDiagnosis_DiagnosisShitikova">
+          <End Role="DiagnosisShitikova" Type="Self.DiagnosisShitikova" Multiplicity="1" />
+          <End Role="PatientDiagnosis" Type="Self.PatientDiagnosis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiagnosisShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PatientDiagnosis">
+              <PropertyRef Name="IDDiagnosis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientDiagnosis_PatientShitikova">
+          <End Role="PatientShitikova" Type="Self.PatientShitikova" Multiplicity="0..1" />
+          <End Role="PatientDiagnosis" Type="Self.PatientDiagnosis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PatientDiagnosis">
+              <PropertyRef Name="IDPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagOfClient_PatientShitikova">
+          <End Role="PatientShitikova" Type="Self.PatientShitikova" Multiplicity="1" />
+          <End Role="TagOfClient" Type="Self.TagOfClient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagOfClient">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Age" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="dateofbirth" Type="date" Mode="In" />
+        </Function>
+        <Function Name="AgeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="dateofbirth" Type="date" Mode="In" />
+        </Function>
+        <Function Name="AgeSEndTimeService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="date">
+          <Parameter Name="dateservice" Type="date" Mode="In" />
+          <Parameter Name="duration" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AllService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="AVGCost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="titleservice" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="BestService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CountPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="town" Type="nvarchar" Mode="In" />
+          <Parameter Name="intervalstart" Type="date" Mode="In" />
+          <Parameter Name="intervalend" Type="date" Mode="In" />
+        </Function>
+        <Function Name="CountSer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="titleser" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="FindsService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="servicename" Type="nvarchar" Mode="In" />
+          <Parameter Name="timeservice" Type="nvarchar" Mode="In" />
+          <Parameter Name="phone" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="MyHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPacient" Type="int" Mode="In" />
+        </Function>
+        <Function Name="MyINfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idpatient" Type="int" Mode="In" />
+        </Function>
+        <Function Name="n_getFullName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+          <Parameter Name="fullname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WILLWrite" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ipatient" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="Хранилище Model1Container">
+          <EntitySet Name="AppointmentYulia" EntityType="Self.AppointmentYulia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DepartmentShitikova" EntityType="Self.DepartmentShitikova" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DiagnosisShitikova" EntityType="Self.DiagnosisShitikova" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeShitikova" EntityType="Self.EmployeeShitikova" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MedicalServiceShitikova" EntityType="Self.MedicalServiceShitikova" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderShitikova" EntityType="Self.OrderShitikova" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientDiagnosis" EntityType="Self.PatientDiagnosis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientShitikova" EntityType="Self.PatientShitikova" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostShitikova" EntityType="Self.PostShitikova" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TagOfClient" EntityType="Self.TagOfClient" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AppointmentYulia_EmployeeShitikova" Association="Self.FK_AppointmentYulia_EmployeeShitikova">
+            <End Role="EmployeeShitikova" EntitySet="EmployeeShitikova" />
+            <End Role="AppointmentYulia" EntitySet="AppointmentYulia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AppointmentYulia_MedicalServiceShitikova" Association="Self.FK_AppointmentYulia_MedicalServiceShitikova">
+            <End Role="MedicalServiceShitikova" EntitySet="MedicalServiceShitikova" />
+            <End Role="AppointmentYulia" EntitySet="AppointmentYulia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeShitikova_DepartmentShitikova" Association="Self.FK_EmployeeShitikova_DepartmentShitikova">
+            <End Role="DepartmentShitikova" EntitySet="DepartmentShitikova" />
+            <End Role="EmployeeShitikova" EntitySet="EmployeeShitikova" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeShitikova_Gender" Association="Self.FK_EmployeeShitikova_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="EmployeeShitikova" EntitySet="EmployeeShitikova" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeShitikova_PostShitikova" Association="Self.FK_EmployeeShitikova_PostShitikova">
+            <End Role="PostShitikova" EntitySet="PostShitikova" />
+            <End Role="EmployeeShitikova" EntitySet="EmployeeShitikova" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderShitikova_AppointmentYulia" Association="Self.FK_OrderShitikova_AppointmentYulia">
+            <End Role="AppointmentYulia" EntitySet="AppointmentYulia" />
+            <End Role="OrderShitikova" EntitySet="OrderShitikova" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderShitikova_PatientShitikova" Association="Self.FK_OrderShitikova_PatientShitikova">
+            <End Role="PatientShitikova" EntitySet="PatientShitikova" />
+            <End Role="OrderShitikova" EntitySet="OrderShitikova" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientDiagnosis_DiagnosisShitikova" Association="Self.FK_PatientDiagnosis_DiagnosisShitikova">
+            <End Role="DiagnosisShitikova" EntitySet="DiagnosisShitikova" />
+            <End Role="PatientDiagnosis" EntitySet="PatientDiagnosis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientDiagnosis_PatientShitikova" Association="Self.FK_PatientDiagnosis_PatientShitikova">
+            <End Role="PatientShitikova" EntitySet="PatientShitikova" />
+            <End Role="PatientDiagnosis" EntitySet="PatientDiagnosis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagOfClient_PatientShitikova" Association="Self.FK_TagOfClient_PatientShitikova">
+            <End Role="PatientShitikova" EntitySet="PatientShitikova" />
+            <End Role="TagOfClient" EntitySet="TagOfClient" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AppointmentYulia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDEmloyee" Type="Int32" Nullable="false" />
+          <Property Name="IDMedicalService" Type="Int32" Nullable="false" />
+          <Property Name="DateService" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="EmployeeShitikova" Relationship="Self.FK_AppointmentYulia_EmployeeShitikova" FromRole="AppointmentYulia" ToRole="EmployeeShitikova" />
+          <NavigationProperty Name="MedicalServiceShitikova" Relationship="Self.FK_AppointmentYulia_MedicalServiceShitikova" FromRole="AppointmentYulia" ToRole="MedicalServiceShitikova" />
+          <NavigationProperty Name="OrderShitikova" Relationship="Self.FK_OrderShitikova_AppointmentYulia" FromRole="AppointmentYulia" ToRole="OrderShitikova" />
+        </EntityType>
+        <EntityType Name="DepartmentShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EmployeeShitikova" Relationship="Self.FK_EmployeeShitikova_DepartmentShitikova" FromRole="DepartmentShitikova" ToRole="EmployeeShitikova" />
+        </EntityType>
+        <EntityType Name="DiagnosisShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DiagnosiName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PatientDiagnosis" Relationship="Self.FK_PatientDiagnosis_DiagnosisShitikova" FromRole="DiagnosisShitikova" ToRole="PatientDiagnosis" />
+        </EntityType>
+        <EntityType Name="EmployeeShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PassportSeries" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PassportNumber" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IDDepartment" Type="Int32" Nullable="false" />
+          <Property Name="IDPost" Type="Int32" Nullable="false" />
+          <Property Name="IDGender" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AppointmentYulia" Relationship="Self.FK_AppointmentYulia_EmployeeShitikova" FromRole="EmployeeShitikova" ToRole="AppointmentYulia" />
+          <NavigationProperty Name="DepartmentShitikova" Relationship="Self.FK_EmployeeShitikova_DepartmentShitikova" FromRole="EmployeeShitikova" ToRole="DepartmentShitikova" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_EmployeeShitikova_Gender" FromRole="EmployeeShitikova" ToRole="Gender" />
+          <NavigationProperty Name="PostShitikova" Relationship="Self.FK_EmployeeShitikova_PostShitikova" FromRole="EmployeeShitikova" ToRole="PostShitikova" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GenderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EmployeeShitikova" Relationship="Self.FK_EmployeeShitikova_Gender" FromRole="Gender" ToRole="EmployeeShitikova" />
+        </EntityType>
+        <EntityType Name="MedicalServiceShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleService" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Duration" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="QNT" Type="Int32" />
+          <NavigationProperty Name="AppointmentYulia" Relationship="Self.FK_AppointmentYulia_MedicalServiceShitikova" FromRole="MedicalServiceShitikova" ToRole="AppointmentYulia" />
+        </EntityType>
+        <EntityType Name="OrderShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDAppointment" Type="Int32" Nullable="false" />
+          <Property Name="IDPatient" Type="Int32" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="AppointmentYulia" Relationship="Self.FK_OrderShitikova_AppointmentYulia" FromRole="OrderShitikova" ToRole="AppointmentYulia" />
+          <NavigationProperty Name="PatientShitikova" Relationship="Self.FK_OrderShitikova_PatientShitikova" FromRole="OrderShitikova" ToRole="PatientShitikova" />
+        </EntityType>
+        <EntityType Name="PatientDiagnosis">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPatient" Type="Int32" />
+          <Property Name="IDDiagnosis" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DiagnosisShitikova" Relationship="Self.FK_PatientDiagnosis_DiagnosisShitikova" FromRole="PatientDiagnosis" ToRole="DiagnosisShitikova" />
+          <NavigationProperty Name="PatientShitikova" Relationship="Self.FK_PatientDiagnosis_PatientShitikova" FromRole="PatientDiagnosis" ToRole="PatientShitikova" />
+        </EntityType>
+        <EntityType Name="PatientShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IDGender" Type="Int32" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="IDTag" Type="Int32" />
+          <NavigationProperty Name="OrderShitikova" Relationship="Self.FK_OrderShitikova_PatientShitikova" FromRole="PatientShitikova" ToRole="OrderShitikova" />
+          <NavigationProperty Name="PatientDiagnosis" Relationship="Self.FK_PatientDiagnosis_PatientShitikova" FromRole="PatientShitikova" ToRole="PatientDiagnosis" />
+          <NavigationProperty Name="TagOfClient" Relationship="Self.FK_TagOfClient_PatientShitikova" FromRole="PatientShitikova" ToRole="TagOfClient" />
+        </EntityType>
+        <EntityType Name="PostShitikova">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EmployeeShitikova" Relationship="Self.FK_EmployeeShitikova_PostShitikova" FromRole="PostShitikova" ToRole="EmployeeShitikova" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TagOfClient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameTag" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="IDClient" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PatientShitikova" Relationship="Self.FK_TagOfClient_PatientShitikova" FromRole="TagOfClient" ToRole="PatientShitikova" />
+        </EntityType>
+        <Association Name="FK_AppointmentYulia_EmployeeShitikova">
+          <End Role="EmployeeShitikova" Type="Self.EmployeeShitikova" Multiplicity="1" />
+          <End Role="AppointmentYulia" Type="Self.AppointmentYulia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppointmentYulia">
+              <PropertyRef Name="IDEmloyee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AppointmentYulia_MedicalServiceShitikova">
+          <End Role="MedicalServiceShitikova" Type="Self.MedicalServiceShitikova" Multiplicity="1" />
+          <End Role="AppointmentYulia" Type="Self.AppointmentYulia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedicalServiceShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AppointmentYulia">
+              <PropertyRef Name="IDMedicalService" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderShitikova_AppointmentYulia">
+          <End Role="AppointmentYulia" Type="Self.AppointmentYulia" Multiplicity="1" />
+          <End Role="OrderShitikova" Type="Self.OrderShitikova" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppointmentYulia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderShitikova">
+              <PropertyRef Name="IDAppointment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeShitikova_DepartmentShitikova">
+          <End Role="DepartmentShitikova" Type="Self.DepartmentShitikova" Multiplicity="1" />
+          <End Role="EmployeeShitikova" Type="Self.EmployeeShitikova" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmployeeShitikova">
+              <PropertyRef Name="IDDepartment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientDiagnosis_DiagnosisShitikova">
+          <End Role="DiagnosisShitikova" Type="Self.DiagnosisShitikova" Multiplicity="1" />
+          <End Role="PatientDiagnosis" Type="Self.PatientDiagnosis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiagnosisShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PatientDiagnosis">
+              <PropertyRef Name="IDDiagnosis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeShitikova_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="EmployeeShitikova" Type="Self.EmployeeShitikova" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmployeeShitikova">
+              <PropertyRef Name="IDGender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeShitikova_PostShitikova">
+          <End Role="PostShitikova" Type="Self.PostShitikova" Multiplicity="1" />
+          <End Role="EmployeeShitikova" Type="Self.EmployeeShitikova" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmployeeShitikova">
+              <PropertyRef Name="IDPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderShitikova_PatientShitikova">
+          <End Role="PatientShitikova" Type="Self.PatientShitikova" Multiplicity="0..1" />
+          <End Role="OrderShitikova" Type="Self.OrderShitikova" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderShitikova">
+              <PropertyRef Name="IDPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientDiagnosis_PatientShitikova">
+          <End Role="PatientShitikova" Type="Self.PatientShitikova" Multiplicity="0..1" />
+          <End Role="PatientDiagnosis" Type="Self.PatientDiagnosis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PatientDiagnosis">
+              <PropertyRef Name="IDPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagOfClient_PatientShitikova">
+          <End Role="PatientShitikova" Type="Self.PatientShitikova" Multiplicity="1" />
+          <End Role="TagOfClient" Type="Self.TagOfClient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PatientShitikova">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagOfClient">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AppointmentYulia" EntityType="Self.AppointmentYulia" />
+          <EntitySet Name="DepartmentShitikova" EntityType="Self.DepartmentShitikova" />
+          <EntitySet Name="DiagnosisShitikova" EntityType="Self.DiagnosisShitikova" />
+          <EntitySet Name="EmployeeShitikova" EntityType="Self.EmployeeShitikova" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" />
+          <EntitySet Name="MedicalServiceShitikova" EntityType="Self.MedicalServiceShitikova" />
+          <EntitySet Name="OrderShitikova" EntityType="Self.OrderShitikova" />
+          <EntitySet Name="PatientDiagnosis" EntityType="Self.PatientDiagnosis" />
+          <EntitySet Name="PatientShitikova" EntityType="Self.PatientShitikova" />
+          <EntitySet Name="PostShitikova" EntityType="Self.PostShitikova" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TagOfClient" EntityType="Self.TagOfClient" />
+          <AssociationSet Name="FK_AppointmentYulia_EmployeeShitikova" Association="Self.FK_AppointmentYulia_EmployeeShitikova">
+            <End Role="EmployeeShitikova" EntitySet="EmployeeShitikova" />
+            <End Role="AppointmentYulia" EntitySet="AppointmentYulia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AppointmentYulia_MedicalServiceShitikova" Association="Self.FK_AppointmentYulia_MedicalServiceShitikova">
+            <End Role="MedicalServiceShitikova" EntitySet="MedicalServiceShitikova" />
+            <End Role="AppointmentYulia" EntitySet="AppointmentYulia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderShitikova_AppointmentYulia" Association="Self.FK_OrderShitikova_AppointmentYulia">
+            <End Role="AppointmentYulia" EntitySet="AppointmentYulia" />
+            <End Role="OrderShitikova" EntitySet="OrderShitikova" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeShitikova_DepartmentShitikova" Association="Self.FK_EmployeeShitikova_DepartmentShitikova">
+            <End Role="DepartmentShitikova" EntitySet="DepartmentShitikova" />
+            <End Role="EmployeeShitikova" EntitySet="EmployeeShitikova" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientDiagnosis_DiagnosisShitikova" Association="Self.FK_PatientDiagnosis_DiagnosisShitikova">
+            <End Role="DiagnosisShitikova" EntitySet="DiagnosisShitikova" />
+            <End Role="PatientDiagnosis" EntitySet="PatientDiagnosis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeShitikova_Gender" Association="Self.FK_EmployeeShitikova_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="EmployeeShitikova" EntitySet="EmployeeShitikova" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeShitikova_PostShitikova" Association="Self.FK_EmployeeShitikova_PostShitikova">
+            <End Role="PostShitikova" EntitySet="PostShitikova" />
+            <End Role="EmployeeShitikova" EntitySet="EmployeeShitikova" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderShitikova_PatientShitikova" Association="Self.FK_OrderShitikova_PatientShitikova">
+            <End Role="PatientShitikova" EntitySet="PatientShitikova" />
+            <End Role="OrderShitikova" EntitySet="OrderShitikova" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientDiagnosis_PatientShitikova" Association="Self.FK_PatientDiagnosis_PatientShitikova">
+            <End Role="PatientShitikova" EntitySet="PatientShitikova" />
+            <End Role="PatientDiagnosis" EntitySet="PatientDiagnosis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagOfClient_PatientShitikova" Association="Self.FK_TagOfClient_PatientShitikova">
+            <End Role="PatientShitikova" EntitySet="PatientShitikova" />
+            <End Role="TagOfClient" EntitySet="TagOfClient" />
+          </AssociationSet>
+          <FunctionImport Name="AllService" ReturnType="Collection(Model1.AllService_Result)" />
+          <FunctionImport Name="BestService" ReturnType="Collection(String)" />
+          <FunctionImport Name="CountPatient" ReturnType="Collection(Int32)">
+            <Parameter Name="town" Mode="In" Type="String" />
+            <Parameter Name="intervalstart" Mode="In" Type="DateTime" />
+            <Parameter Name="intervalend" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="CountSer" ReturnType="Collection(Model1.CountSer_Result)">
+            <Parameter Name="titleser" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FindsService">
+            <Parameter Name="servicename" Mode="In" Type="String" />
+            <Parameter Name="timeservice" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MyHistory" ReturnType="Collection(Model1.MyHistory_Result)">
+            <Parameter Name="idPacient" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="MyINfo" ReturnType="Collection(Model1.MyINfo_Result)">
+            <Parameter Name="idpatient" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Model1.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Model1.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="WILLWrite" ReturnType="Collection(Model1.WILLWrite_Result)">
+            <Parameter Name="ipatient" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="AllService_Result">
+          <Property Type="String" Name="TitleService" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Duration" Nullable="false" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" Precision="10" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="CountSer_Result">
+          <Property Type="Int32" Name="Column1" Nullable="true" />
+          <Property Type="Decimal" Name="Column2" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="MyHistory_Result">
+          <Property Type="DateTime" Name="Дата" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Услуга" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Врач" Nullable="false" MaxLength="152" />
+          <Property Type="String" Name="Диагноз" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="MyINfo_Result">
+          <Property Type="String" Name="Column1" Nullable="false" MaxLength="152" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="GenderName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="WILLWrite_Result">
+          <Property Type="DateTime" Name="Дата" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Услуга" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Врач" Nullable="false" MaxLength="152" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Model1Container" CdmEntityContainer="Entities2">
+          <EntitySetMapping Name="AppointmentYulia">
+            <EntityTypeMapping TypeName="Model1.AppointmentYulia">
+              <MappingFragment StoreEntitySet="AppointmentYulia">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDEmloyee" ColumnName="IDEmloyee" />
+                <ScalarProperty Name="IDMedicalService" ColumnName="IDMedicalService" />
+                <ScalarProperty Name="DateService" ColumnName="DateService" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepartmentShitikova">
+            <EntityTypeMapping TypeName="Model1.DepartmentShitikova">
+              <MappingFragment StoreEntitySet="DepartmentShitikova">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiagnosisShitikova">
+            <EntityTypeMapping TypeName="Model1.DiagnosisShitikova">
+              <MappingFragment StoreEntitySet="DiagnosisShitikova">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DiagnosiName" ColumnName="DiagnosiName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeShitikova">
+            <EntityTypeMapping TypeName="Model1.EmployeeShitikova">
+              <MappingFragment StoreEntitySet="EmployeeShitikova">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="MName" ColumnName="MName" />
+                <ScalarProperty Name="PassportSeries" ColumnName="PassportSeries" />
+                <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="DateOfBirthday" ColumnName="DateOfBirthday" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="IDDepartment" ColumnName="IDDepartment" />
+                <ScalarProperty Name="IDPost" ColumnName="IDPost" />
+                <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gender">
+            <EntityTypeMapping TypeName="Model1.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicalServiceShitikova">
+            <EntityTypeMapping TypeName="Model1.MedicalServiceShitikova">
+              <MappingFragment StoreEntitySet="MedicalServiceShitikova">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TitleService" ColumnName="TitleService" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="QNT" ColumnName="QNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderShitikova">
+            <EntityTypeMapping TypeName="Model1.OrderShitikova">
+              <MappingFragment StoreEntitySet="OrderShitikova">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDAppointment" ColumnName="IDAppointment" />
+                <ScalarProperty Name="IDPatient" ColumnName="IDPatient" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientDiagnosis">
+            <EntityTypeMapping TypeName="Model1.PatientDiagnosis">
+              <MappingFragment StoreEntitySet="PatientDiagnosis">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPatient" ColumnName="IDPatient" />
+                <ScalarProperty Name="IDDiagnosis" ColumnName="IDDiagnosis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientShitikova">
+            <EntityTypeMapping TypeName="Model1.PatientShitikova">
+              <MappingFragment StoreEntitySet="PatientShitikova">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="MName" ColumnName="MName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IDTag" ColumnName="IDTag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostShitikova">
+            <EntityTypeMapping TypeName="Model1.PostShitikova">
+              <MappingFragment StoreEntitySet="PostShitikova">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PostName" ColumnName="PostName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Model1.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TagOfClient">
+            <EntityTypeMapping TypeName="Model1.TagOfClient">
+              <MappingFragment StoreEntitySet="TagOfClient">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameTag" ColumnName="NameTag" />
+                <ScalarProperty Name="IDClient" ColumnName="IDClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AllService" FunctionName="Хранилище Model1.AllService">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.AllService_Result">
+                <ScalarProperty Name="TitleService" ColumnName="TitleService" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="BestService" FunctionName="Хранилище Model1.BestService" />
+          <FunctionImportMapping FunctionImportName="CountPatient" FunctionName="Хранилище Model1.CountPatient" />
+          <FunctionImportMapping FunctionImportName="CountSer" FunctionName="Хранилище Model1.CountSer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.CountSer_Result">
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+                <ScalarProperty Name="Column2" ColumnName="Column2" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FindsService" FunctionName="Хранилище Model1.FindsService" />
+          <FunctionImportMapping FunctionImportName="MyHistory" FunctionName="Хранилище Model1.MyHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.MyHistory_Result">
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Услуга" ColumnName="Услуга" />
+                <ScalarProperty Name="Врач" ColumnName="Врач" />
+                <ScalarProperty Name="Диагноз" ColumnName="Диагноз" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MyINfo" FunctionName="Хранилище Model1.MyINfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.MyINfo_Result">
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище Model1.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище Model1.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище Model1.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище Model1.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище Model1.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище Model1.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище Model1.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="WILLWrite" FunctionName="Хранилище Model1.WILLWrite">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.WILLWrite_Result">
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Услуга" ColumnName="Услуга" />
+                <ScalarProperty Name="Врач" ColumnName="Врач" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
